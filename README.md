@@ -1,28 +1,19 @@
-# 🛡️ Pashify — ML-Powered Password Security Analyzer
+# 🛡️ Pashify – ML-Powered Password Security Analyzer
 
-Pashify is a modern **Machine Learning-powered Password Security Analyzer** built with **Python**, **Streamlit**, and **Scikit-learn**. It helps users evaluate password strength through intelligent classification, entropy analysis, breach detection, and secure password generation. The application features a responsive cyberpunk-inspired interface with glassmorphism, real-time analysis, and interactive visualizations.
+Pashify is a **Machine Learning-powered Password Security Analyzer** developed using **Python**, **Streamlit**, and **Scikit-learn**. It is designed to help users evaluate password strength, identify potential security risks, and generate strong passwords through an intuitive cyberpunk-inspired interface. The application combines machine learning with cybersecurity principles to provide fast, accurate, and privacy-focused password analysis.
 
-The core strength classifier uses a **Logistic Regression** model trained on over **669,000 password samples** with character-level TF-IDF vectorization for fast and accurate predictions. Compared to the previous Random Forest implementation, the optimized model dramatically reduces storage requirements and startup time while delivering near-instant inference.
+The core password classifier is built using a **Logistic Regression** model trained on over **669,000 password samples**. Character-level TF-IDF vectorization is used to extract meaningful patterns, enabling real-time classification of passwords into **Weak**, **Medium**, or **Strong** categories. The optimized model reduced storage from **936 MB to just 71 KB**, significantly improving loading speed and deployment efficiency while maintaining strong predictive performance.
 
-Pashify estimates password entropy, calculates brute-force crack times for multiple attack scenarios, and performs both **offline** and **online** breach detection using the secure **Have I Been Pwned K-Anonymity API**, ensuring that raw passwords are never transmitted over the network.
+Pashify also performs **password entropy analysis**, estimates **brute-force crack times** across multiple attack scenarios, and checks passwords against known data breaches using both an **offline leaked password database** and the **Have I Been Pwned K-Anonymity API**. To protect user privacy, passwords are hashed locally, and only a small portion of the hash is transmitted during online breach verification.
 
-Additional features include a customizable password generator with adjustable length, uppercase, lowercase, numeric, and special character options, along with real-time entropy calculation for generated passwords.
+The application includes a customizable **secure password generator** with configurable length and character sets, allowing users to create high-entropy passwords instantly.
 
-### 🚀 Tech Stack
+**Tech Stack:** Python, Streamlit, Scikit-learn, Pandas, NumPy, Requests
 
-* Python
-* Streamlit
-* Scikit-learn
-* Pandas
-* NumPy
-* Requests
+**🌐 Live Demo:** https://nachiiket77-pashify-app-vw6wsy.streamlit.app/
 
-### 👨‍💻 Author
+**💻 GitHub:** https://github.com/nachiiket77/Pashify
 
-**Nachiket Ajmera**
-🐍 Python Developer | 🛡️ Cybersecurity Enthusiast
+**💼 LinkedIn:** https://www.linkedin.com/in/nachiket-ajmera
 
-* 💼 LinkedIn: https://www.linkedin.com/in/nachiket-ajmera
-* 💻 GitHub: https://github.com/nachiiket77
-
-If you found this project useful, consider giving it a ⭐ on GitHub.
+If you found this project interesting, consider giving it a ⭐ on GitHub and feel free to connect with me on LinkedIn for collaboration or feedback.
