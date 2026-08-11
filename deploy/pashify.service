@@ -1,0 +1,15 @@
+[Unit]
+Description=Pashify AI Password Security Analyzer Daemon
+After=network.target
+
+[Service]
+User=pashify
+Group=pashify
+WorkingDirectory=/var/www/pashify
+ExecStart=/var/www/pashify/venv/bin/streamlit run app.py --server.port 8501 --server.address 127.0.0.1 --server.headless true
+Restart=always
+RestartSec=5
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target
