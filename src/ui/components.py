@@ -238,8 +238,32 @@ def render_dashboard(analysis: dict):
     st.markdown('</div>', unsafe_allow_html=True)
 
 
+def render_adsense_script():
+    """Injects Google AdSense Auto-Ads script tag if ADSENSE_CLIENT_ID is configured."""
+    from src.config import ADSENSE_CLIENT_ID
+    if ADSENSE_CLIENT_ID:
+        client_id = ADSENSE_CLIENT_ID if ADSENSE_CLIENT_ID.startswith("ca-pub-") else f"ca-pub-{ADSENSE_CLIENT_ID}"
+        st.markdown(f"""
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={client_id}" crossorigin="anonymous"></script>
+        <div class="ad-banner-container">
+            <p style="margin: 0; font-size: 0.75rem; color: #64748b;">SPONSORED SECURITY ADVERTISEMENT</p>
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="{client_id}"
+                 data-ad-slot="auto"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+        """, unsafe_allow_html=True)
+
+
 def render_affiliate_and_ad_containers():
     """Renders non-intrusive monetization placeholders and security partner recommendations."""
+    render_adsense_script()
+
     st.markdown("""
     <div class="cyber-card">
         <div class="card-header">🛡️ Recommended Security Partners</div>
